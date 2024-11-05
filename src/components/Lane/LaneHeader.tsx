@@ -7,7 +7,6 @@ import { t } from 'src/lang/helpers';
 import { parseLaneTitle } from 'src/parsers/helpers/parser';
 
 import { getDropAction } from '../Editor/helpers';
-import { GripIcon } from '../Icon/GripIcon';
 import { Icon } from '../Icon/Icon';
 import { KanbanContext } from '../context';
 import { c } from '../helpers';
@@ -134,10 +133,6 @@ export const LaneHeader = memo(function LaneHeader({
         onDblClick={onDoubleClick}
         className={c('lane-header-wrapper')}
       >
-        <div className={c('lane-grip')} ref={bindHandle}>
-          <GripIcon />
-        </div>
-
         <div onClick={toggleIsCollapsed} className={c('lane-collapse')}>
           <Icon name="chevron-down" />
         </div>
@@ -149,6 +144,7 @@ export const LaneHeader = memo(function LaneHeader({
           onChange={onLaneTitleChange}
           setEditState={setEditState}
           title={lane.data.title}
+          bindHandle={bindHandle}
         />
 
         <LaneLimitCounter

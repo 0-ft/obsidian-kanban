@@ -16,6 +16,7 @@ export interface LaneTitleProps {
   setEditState: Dispatch<StateUpdater<EditState>>;
   onChange: (str: string) => void;
   id: string;
+  bindHandle: (el: HTMLElement) => void;
 }
 
 export function LaneLimitCounter({
@@ -52,7 +53,14 @@ export function LaneLimitCounter({
   );
 }
 
-export function LaneTitle({ maxItems, editState, setEditState, title, onChange }: LaneTitleProps) {
+export function LaneTitle({
+  maxItems,
+  editState,
+  setEditState,
+  title,
+  onChange,
+  bindHandle,
+}: LaneTitleProps) {
   const { stateManager } = useContext(KanbanContext);
   const titleRef = useRef<string | null>(null);
 
@@ -83,7 +91,7 @@ export function LaneTitle({ maxItems, editState, setEditState, title, onChange }
   const onEscape = useCallback(() => setEditState(EditingState.cancel), [setEditState]);
 
   return (
-    <div className={c('lane-title')}>
+    <div className={c('lane-title')} ref={bindHandle}>
       {isEditing(editState) ? (
         <MarkdownEditor
           editState={editState}
