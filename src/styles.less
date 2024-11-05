@@ -22,6 +22,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  background-color: var(--background-secondary);
 }
 
 .kanban-plugin,
@@ -272,7 +273,8 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 1rem;
+    gap: 10px;
+    padding: 10px;
     width: fit-content;
     height: 100%;
   }
@@ -311,9 +313,8 @@ button.kanban-plugin__search-cancel-button .kanban-plugin__icon {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--background-secondary);
   border-radius: 6px;
-  border: 1px solid var(--background-modifier-border);
+  background-color: var(--background-secondary);
 
   .is-dropping > & {
     background-color: hsla(var(--interactive-accent-hsl), 0.15);
@@ -395,7 +396,6 @@ button.kanban-plugin__lane-action-add {
   gap: var(--size-4-1);
   flex-shrink: 0;
   flex-grow: 0;
-  border-bottom: 1px solid var(--background-modifier-border);
 
   .collapse-horizontal &,
   .collapse-vertical & {
@@ -474,6 +474,7 @@ button.kanban-plugin__lane-action-add {
   width: 100%;
   display: flex;
   flex-direction: column;
+  color: var(--text-muted);
 }
 
 .kanban-plugin__lane-title-text {
@@ -558,19 +559,16 @@ button.kanban-plugin__lane-settings-button + button.kanban-plugin__lane-settings
 }
 
 .kanban-plugin__lane-items-wrapper {
-  margin: 4px;
   height: 100%;
 }
 
 .kanban-plugin__lane-items {
-  padding: 4px;
+  padding-top: 10px;
+  padding: 10px;
   margin-block: 0;
-  margin-inline: 4px;
   display: flex;
   flex-direction: column;
-  > div {
-    margin-block-start: 4px;
-  }
+  gap: 14px;
 }
 
 .kanban-plugin__lane-items > .kanban-plugin__placeholder {
@@ -686,7 +684,8 @@ button.kanban-plugin__new-item-button {
 
 .kanban-plugin__item {
   font-size: 0.875rem;
-  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+
   border-radius: var(--input-radius);
   overflow: hidden;
   transition: 300ms opacity cubic-bezier(0.25, 1, 0.5, 1);
@@ -699,6 +698,7 @@ button.kanban-plugin__new-item-button {
 
 .kanban-plugin__item-content-wrapper {
   background: var(--background-primary);
+  padding: 6px;
 }
 
 .kanban-plugin__item-title-wrapper {
